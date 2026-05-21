@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:background="@android:drawable/dialog_holo_light_frame"
+    android:gravity="center_vertical">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtDescricaoTarefa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Descrição do Produto"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#333333"/>
+
+        <TextView
+            android:id="@+id/txtCodigoTarefa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Código: 123456"
+            android:textSize="14sp"
+            android:textColor="#666666"/>
+
+        <TextView
+            android:id="@+id/txtQtdTarefa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estoque: 5 / Máx: 20"
+            android:textSize="14sp"
+            android:textColor="#E53935"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnConcluirTarefa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Repor"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFFFFF"/>
+
+</LinearLayout>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "321377808690",
+    "project_id": "reposimais",
+    "storage_bucket": "reposimais.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:321377808690:android:088228a02baf4742ac272b",
+        "android_client_info": {
+          "package_name": "com.example.reposimais"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBK8O3aq_F_daPmKgq-XzO5P07ESmbTMRs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
