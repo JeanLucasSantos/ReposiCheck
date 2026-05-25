@@ -2,9 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="176dp"
-    android:background="#1D6F8A"
+    android:background="#0D1B2A"
     android:gravity="bottom"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:padding="16dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
@@ -13,17 +13,16 @@
         android:layout_height="64dp"
         android:layout_marginBottom="16dp"
         android:src="@android:drawable/ic_menu_report_image"
-        android:tint="#FFFFFF"/>
+        android:backgroundTint="#FFFFFF" />
 
     <TextView
         android:id="@+id/txtNomeUsuarioMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Repositor Ativo"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        android:textSize="16sp"/>
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtEmailUsuarioMenu"
@@ -31,6 +30,6 @@
         android:layout_height="wrap_content"
         android:text="usuario@empresa.com"
         android:textColor="#E0E0E0"
-        android:textSize="14sp"/>
+        android:textSize="14sp" />
 
 </LinearLayout>

@@ -16,6 +16,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class LoginActivity extends AppCompatActivity {
 
     private EditText editNome, editEmail, editSenha;
@@ -116,6 +119,7 @@ public class LoginActivity extends AppCompatActivity {
                         editor.apply();
 
                         Toast.makeText(LoginActivity.this, "Conta criada com sucesso!", Toast.LENGTH_SHORT).show();
+                        salvarDadosUsuario();
                         irParaTelaPrincipal();
                     } else {
                         Toast.makeText(LoginActivity.this, "Erro ao criar conta: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
@@ -123,8 +127,34 @@ public class LoginActivity extends AppCompatActivity {
                 });
     }
 
+    private void salvarDadosUsuario() {
+
+        String nome = editNome.getText().toString().trim();
+
+        // Instância do Realtime Database
+        DatabaseReference databaseReference = FirebaseDatabase
+                .getInstance()
+                .getReference();
+
+        // Cria um mapa para armazenar os dados do usuário
+        Map<String, Object> usuarios = new HashMap<>();
+        usuarios.put("nome", nome);
+
+        // Obtém o ID único do usuário autenticado
+        String usuarioID = FirebaseAuth.getInstance()
+                .getCurrentUser()
+                .getUid();
+
+        // Salva os dados no nó "Usuarios/usuarioID"
+        databaseReference
+                .child("Usuarios")
+                .child(usuarioID)
+                .setValue(usuarios);
+    }
+
     private void irParaTelaPrincipal() {
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        intent.putExtra("123", editNome.getText().toString());
         startActivity(intent);
         finish();
     }

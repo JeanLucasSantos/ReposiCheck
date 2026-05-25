@@ -10,24 +10,56 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#F5F5F5">
+        android:background="#F2F4F7"> <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_tarefas"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#0D1B2A" app:titleTextColor="#FFFFFF"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_tarefas"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#1D6F8A"
-            app:titleTextColor="#FFFFFF"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#0D1B2A"
+            android:paddingHorizontal="20dp"
+            android:paddingBottom="24dp">
 
-        <ListView
-            android:id="@+id/listViewTarefas"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Olá, Repositor!"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Painel de Controle e Alertas"
+                android:textColor="#6DD47E" android:textSize="14sp"
+                android:layout_marginTop="4dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alertas de Reposição Crítica"
+            android:textColor="#0D1B2A"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="8dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewTarefas"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="16dp"
-            android:clipToPadding="false"
-            android:divider="@android:color/transparent"
-            android:dividerHeight="8dp"/>
+            android:paddingHorizontal="4dp"
+            android:clipToPadding="false"/>
+
     </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
@@ -36,6 +68,9 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header"
-        app:menu="@menu/drawer_menu" />
+        app:menu="@menu/drawer_menu"
+        app:itemIconTint="#0D1B2A"
+        app:itemTextColor="#0D1B2A"
+        android:background="#FFFFFF"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>
