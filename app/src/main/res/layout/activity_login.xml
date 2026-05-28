@@ -1,66 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="32dp"
-    android:gravity="center_vertical"
+    android:gravity="center"
     android:background="#F8F9FA">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nome Completo (Para novo cadastro)"
-        android:textSize="16sp"
-        android:textColor="#333333"
-        android:layout_marginBottom="8dp"/>
-
-    <EditText
-        android:id="@+id/editNomeLogin"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="Seu nome"
-        android:inputType="textPersonName"
-        android:paddingLeft="12dp"
-        android:paddingRight="12dp"
-        android:background="@android:drawable/editbox_background"
-        android:layout_marginBottom="24dp"/>
+        android:text="ReposiCheck"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="#0D1B2A"
+        android:layout_marginBottom="4dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Endereço de e-mail"
-        android:textSize="16sp"
-        android:textColor="#333333"
-        android:layout_marginBottom="8dp"/>
+        android:text="Controle de Estoque Inteligente"
+        android:textSize="14sp"
+        android:textColor="#666666"
+        android:layout_marginBottom="40dp"/>
 
-    <EditText
-        android:id="@+id/editEmailLogin"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:inputType="textEmailAddress"
-        android:paddingLeft="12dp"
-        android:paddingRight="12dp"
-        android:background="@android:drawable/editbox_background"
-        android:layout_marginBottom="24dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Senha"
-        android:textSize="16sp"
-        android:textColor="#333333"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="16dp"
+        app:boxStrokeColor="#1D6F8A"
+        app:hintTextColor="#1D6F8A"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-    <EditText
-        android:id="@+id/editSenhaLogin"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editNomeLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nome Completo (Para novo cadastro)"
+            android:inputType="textPersonName"
+            android:textColor="#333333"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:inputType="textPassword"
-        android:paddingLeft="12dp"
-        android:paddingRight="12dp"
-        android:background="@android:drawable/editbox_background"
-        android:layout_marginBottom="16dp"/>
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:boxStrokeColor="#1D6F8A"
+        app:hintTextColor="#1D6F8A"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editEmailLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Endereço de e-mail"
+            android:inputType="textEmailAddress"
+            android:textColor="#333333"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        app:boxStrokeColor="#1D6F8A"
+        app:hintTextColor="#1D6F8A"
+        app:passwordToggleEnabled="true"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editSenhaLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Senha"
+            android:inputType="textPassword"
+            android:textColor="#333333"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -74,7 +89,7 @@
             android:text="Lembrar-me"
             android:textColor="#333333"
             android:textSize="15sp"
-            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:layout_centerVertical="true"/>
 
         <Button
@@ -84,9 +99,11 @@
             android:text="Acessar"
             android:backgroundTint="#1D6F8A"
             android:textColor="#FFFFFF"
-            android:paddingLeft="24dp"
-            android:paddingRight="24dp"
-            android:layout_alignParentRight="true"/>
+            android:paddingHorizontal="24dp"
+            android:textStyle="bold"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            app:cornerRadius="8dp"/>
     </RelativeLayout>
 
     <TextView
@@ -96,7 +113,11 @@
         android:text="Criar uma nova conta com este Nome"
         android:textColor="#1D6F8A"
         android:textSize="14sp"
+        android:textStyle="bold"
         android:layout_gravity="center"
         android:padding="8dp"/>
 
 </LinearLayout>
+       
+   
+         
