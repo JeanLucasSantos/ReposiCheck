@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/drawer_layout_tarefas"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
@@ -10,67 +10,43 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#F2F4F7"> <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_tarefas"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="#0D1B2A" app:titleTextColor="#FFFFFF"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+        android:background="#F8F9FA">
 
-        <LinearLayout
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_height="?attr/actionBarSize"
             android:background="#0D1B2A"
-            android:paddingHorizontal="20dp"
-            android:paddingBottom="24dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Olá, Repositor!"
-                android:textColor="#FFFFFF"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Painel de Controle e Alertas"
-                android:textColor="#6DD47E" android:textSize="14sp"
-                android:layout_marginTop="4dp"
-                android:textStyle="bold" />
-        </LinearLayout>
+            app:titleTextColor="#FFFFFF"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Alertas de Reposição Crítica"
-            android:textColor="#0D1B2A"
-            android:textSize="16sp"
+            android:text="Produtos para Reposição"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"
+            android:textColor="#0D1B2A"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewTarefas"
+            android:id="@+id/recyclerTarefas"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingHorizontal="4dp"
+            android:scrollbars="vertical"
+            android:paddingBottom="16dp"
             android:clipToPadding="false"/>
 
     </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view_tarefas"
+        android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header"
-        app:menu="@menu/drawer_menu"
-        app:itemIconTint="#0D1B2A"
-        app:itemTextColor="#0D1B2A"
-        android:background="#FFFFFF"/>
+        app:menu="@menu/drawer_menu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
