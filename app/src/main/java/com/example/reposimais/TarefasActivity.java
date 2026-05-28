@@ -40,16 +40,16 @@ public class TarefasActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tarefas);
 
         // 1. Inicialização dos componentes do Menu Lateral e Toolbar
-        toolbar = findViewById(R.id.toolbar_tarefas);
-        drawerLayout = findViewById(R.id.drawer_layout_tarefas);
-        navigationView = findViewById(R.id.nav_view_tarefas);
+        toolbar = findViewById(R.id.toolbar);
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
 
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle(""); // Deixa vazio para destacar os textos customizados do layout
+            getSupportActionBar().setTitle("");
         }
 
-        // 2. Configuração do botão Hambúrguer (Abre e fecha o menu)
+        // 2. Configuração do botão Hambúrguer
         toggle = new ActionBarDrawerToggle(
                 this, drawerLayout, toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -60,17 +60,13 @@ public class TarefasActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
 
-            // Nota: Se der erro em alguma ID abaixo, mude para os nomes exatos do seu res/menu/drawer_menu.xml
             if (id == R.id.nav_tarefas) {
-                // Já está nesta tela, apenas fecha o menu
                 drawerLayout.closeDrawers();
             } else if (id == R.id.nav_configurar) {
-                // Abre a tela de cadastro/configuração (MainActivity)
                 Intent intent = new Intent(TarefasActivity.this, MainActivity.class);
                 startActivity(intent);
-                finish(); // Fecha a tela atual para evitar pilhas na memória
+                finish();
             } else if (id == R.id.nav_logout) {
-                // Exemplo de ação para o botão sair
                 Toast.makeText(TarefasActivity.this, "Saindo do sistema...", Toast.LENGTH_SHORT).show();
                 finish();
             }
@@ -79,8 +75,8 @@ public class TarefasActivity extends AppCompatActivity {
             return true;
         });
 
-        // 4. Configuração do RecyclerView (Sua listagem operacional)
-        recyclerView = findViewById(R.id.recyclerViewTarefas);
+        // 4. Configuração do RecyclerView (Ajustado exatamente com o ID do seu XML)
+        recyclerView = findViewById(R.id.recyclerTarefas);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         listaTarefas = new ArrayList<>();
@@ -97,7 +93,6 @@ public class TarefasActivity extends AppCompatActivity {
                     Produto produto = dataSnapshot.getValue(Produto.class);
 
                     if (produto != null) {
-                        // REGRA DE GATILHO: Se a gôndola caiu para o nível crítico (mínimo)
                         if (produto.getQtdGondola() <= produto.getQtdMinima() && produto.getEstoqueGeral() > 0 )  {
                             listaTarefas.add(produto);
                         }
