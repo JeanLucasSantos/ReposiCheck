@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="24dp"
-                android:gravity="center">
+                android:gravity="center_horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -39,17 +39,24 @@
                     android:textSize="22sp"
                     android:textStyle="bold"
                     android:textColor="#1D6F8A"
-                    android:layout_marginBottom="24dp"/>
+                    android:layout_marginBottom="24dp"
+                    android:layout_gravity="center"/>
 
-                <EditText
-                    android:id="@+id/editCodigoBarras"
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Código de Barras do Produto"
-                    android:inputType="number"
-                    android:padding="12dp"
                     android:layout_marginBottom="16dp"
-                    android:background="@android:drawable/editbox_background"/>
+                    app:boxStrokeColor="#1D6F8A"
+                    app:hintTextColor="#1D6F8A"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editCodigoBarras"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Código de Barras do Produto"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardInfoProduto"
@@ -57,7 +64,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
                     android:visibility="gone"
-                    app:cardCornerRadius="8dp"
+                    app:cardCornerRadius="12dp"
                     app:cardElevation="4dp"
                     app:cardBackgroundColor="#F8F9FA">
 
@@ -96,33 +103,47 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <EditText
-                    android:id="@+id/editCapacidadeMax"
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Definir Capacidade Máxima"
-                    android:inputType="number"
-                    android:padding="12dp"
                     android:layout_marginBottom="16dp"
-                    android:background="@android:drawable/editbox_background"/>
+                    app:boxStrokeColor="#1D6F8A"
+                    app:hintTextColor="#1D6F8A"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-                <EditText
-                    android:id="@+id/editQtdMinima"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editCapacidadeMax"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Definir Capacidade Máxima"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Definir Quantidade Mínima"
-                    android:inputType="number"
-                    android:padding="12dp"
                     android:layout_marginBottom="24dp"
-                    android:background="@android:drawable/editbox_background"/>
+                    app:boxStrokeColor="#1D6F8A"
+                    app:hintTextColor="#1D6F8A"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editQtdMinima"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Definir Quantidade Mínima"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
                     android:id="@+id/btnSalvarMinimo"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="54dp"
                     android:text="Salvar Configurações"
                     android:backgroundTint="#27AE60"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    app:cornerRadius="8dp"/>
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
@@ -136,3 +157,5 @@
         app:menu="@menu/drawer_menu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
+             
+        
